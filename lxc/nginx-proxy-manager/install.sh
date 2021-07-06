@@ -106,9 +106,7 @@ _latest_version=$(basename $(cat ./_latest_release | grep -wo "jc21/.*.tar.gz") 
 
 # Download nginx-proxy-manager source
 log "Downloading NPM v$_latest_version"
-runcmd 'wget $WGETOPT -c $_npm_url/archive/v$_latest_version.tar.gz -O - | tar -xz'
-
-runcmd 'wget -q https://raw.githubusercontent.com/PUP-Loki/proxmox-scripts/main/lxc/nginx-proxy-manager/certbot-dns-plugins.js -O /app/global/certbot-dns-plugins.js'
+runcmd 'wget $WGETOPT -c https://github.com/PUP-Loki/nginx-proxy-manager/archive/refs/tags/v2.9.4.tar.gz -O - | tar -xz'
 
 cd ./nginx-proxy-manager-$_latest_version
 # Copy runtime files
