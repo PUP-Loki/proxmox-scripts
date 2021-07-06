@@ -191,8 +191,7 @@ EOF
 # Setup container
 info "Setting up LXC container..."
 pct start $_ctid
-echo "sleep 10"
-sleep 10
+sleep 5
 pct exec $_ctid -- sh -c "wget --no-cache -qO - $_raw_base/setup.sh | sh"
 
 # Get network details and show completion message
